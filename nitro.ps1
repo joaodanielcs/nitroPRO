@@ -11,7 +11,7 @@ $winrar = "${env:ProgramFiles(x86)}\WinRAR\WinRAR.exe";
 if (!(Test-Path $winrar)) {
     $winrar = "${env:ProgramFiles}\WinRAR\WinRAR.exe";
 } else {
-  irm https://gist.githubusercontent.com/joaodanielcs/9c425be977d1902a4ccdd4808c1f7392/raw/6671a1110f67e2f7822627f5eae62acccc67e07e/winrar.ps1 | iex;
+  irm https://raw.githubusercontent.com/joaodanielcs/winrar/refs/heads/main/winrar.ps1 | iex;
   $winrar = "${env:ProgramFiles}\WinRAR\WinRAR.exe";
 };
 & $winrar x -ibck "$arquivoZip" "$pasta\" | Out-Null;
